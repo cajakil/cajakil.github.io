@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .wrapper {
+    padding : 10px;
+    margin: auto;
+    font-family: sans;
+    text-align: center;
+  }
+  .title {
+    font-size: 28pt;
+
+    color: rgba(26,115,232,1);
+    font-series: bold;
+  }
+  .info {
+
+  }
+  </style>
+  </head>
+  <body>
+    <div class="wrapper">
+<div class="header">Keyboard helper admin</div>
+  <h1 class="title">Update keyboard status</h1>
+<div class="info">Scan QR code to open status update form</div>
+<div style="height:20px"></div>
+<div id="qr-reader" style="width:300px;margin:auto;"></div>
+</div>
+<!-- <div id="qr-reader-results" style="width:360px"></div> -->
+<script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+<script>
+var resultContainer = document.getElementById('qr-reader-results');
+var lastResult, countResults = 0;
+var keyboardIds = [
+"sCDwGuEcuM",
+"IWJmE117oB",
+"GbB8ejA34r",
+"JuXMTBbtTl",
+"MjX8aGXdsJ",
+"fV8gfTYucM",
+"LmiN3HnYI0",
+"EABqdAcDfQ",
+"GLWF3rKsql",
+"EYloYnAq7F",
+"SX922HL9C6",
+"Iwi0pRc6Zq",
+"XlUxeqGkw8",
+"ZteSZbfOoP",
+"e8WbU4Zipj",
+"Y3bmOm9w01",
+"zeb7BNkRzI",
+"uvIiE5RKtt",
+"aodYpImW6J",
+"Tlo1Y6HkGN]"]
+formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?entry.471244016=*kbNum*#i5"
+
+function onScanSuccess(qrCodeMessage) {
+    // if (qrCodeMessage !== lastResult) {
+    //     ++countResults;
+    //     lastResult = qrCodeMessage;
+    //     resultContainer.innerHTML
+    //         += `<div>[${countResults}] - ${qrCodeMessage}</div>`;
+    // }
+    var kbId = qrCodeMessage.slice(-10);
+    var kbNum = keyboardIds.indexOf(kbId) + 1;
+    window.location.href = formUrl.replace("*kbNum*",kbNum);
+}
+
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "qr-reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
+</script>
+</body>
+</html>
