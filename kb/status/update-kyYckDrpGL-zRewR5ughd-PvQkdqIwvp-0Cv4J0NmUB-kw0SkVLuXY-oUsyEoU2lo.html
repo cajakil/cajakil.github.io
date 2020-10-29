@@ -74,7 +74,7 @@ function onScanSuccess(qrCodeMessage) {
     var kbId = qrCodeMessage.slice(-10);
     var kbNum = keyboardIds.indexOf(kbId) + 1;
     var chosenName = document.getElementById("deliv-opts").value
-    if (chosenName = "none") {
+    if (chosenName == "none") {
       var recipBit = ""
     }
     else {
