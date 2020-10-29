@@ -1,4 +1,4 @@
-import nodefetch from 'node-fetch';
+// import nodefetch from 'node-fetch';
 
 const gsheetsAPI = function (sheetId, sheetNumber = 1) {
   const errorObj = { hasError: true };
@@ -7,7 +7,7 @@ const gsheetsAPI = function (sheetId, sheetNumber = 1) {
   try {
     fetchFunc = window.fetch;
   } catch (err) {
-    fetchFunc = nodefetch;
+    // fetchFunc = nodefetch;
   }
 
   try {
