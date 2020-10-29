@@ -22,12 +22,6 @@
   </style>
   <script src="./getDueDeliv.js" type="module">
   </script>
-  <script>var chosenName = "none"
-  function nameChanged(){
-    chosenName = document.getElementById("deliv-opts").value
-  }
-  </script>
-
   </head>
   <body>
     <div class="wrapper">
@@ -35,7 +29,7 @@
   <h1 class="title">Scan keyboard QR</h1>
 <!-- <div class="info">Scan QR code to open status update form</div> -->
 <!-- <div style="height:20px"></div> -->
-<select id="deliv-opts" onchange="nameChanged()">
+<select id="deliv-opts">
   <option value="none">If delivery, choose name</option>
 
 </select>
@@ -79,6 +73,7 @@ function onScanSuccess(qrCodeMessage) {
     // }
     var kbId = qrCodeMessage.slice(-10);
     var kbNum = keyboardIds.indexOf(kbId) + 1;
+    var chosenName = document.getElementById("deliv-opts").value
     if (chosenName = "none") {
       var recipBit = ""
     }
