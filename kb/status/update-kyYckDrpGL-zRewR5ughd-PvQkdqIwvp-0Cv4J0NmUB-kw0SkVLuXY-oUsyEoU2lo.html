@@ -63,7 +63,7 @@ var keyboardIds = [
 "uvIiE5RKtt",
 "aodYpImW6J",
 "Tlo1Y6HkGN"]
-formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?entry.471244016=*kbNum*#i5"
+formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?entry.471244016=*kbNum*&*recip*#i5"
 
 function onScanSuccess(qrCodeMessage) {
     // if (qrCodeMessage !== lastResult) {
@@ -79,7 +79,7 @@ function onScanSuccess(qrCodeMessage) {
       var thisFormUrl = formUrl
     }
     else {
-      var thisFormUrl = thisFormUrl + "&entry.1836097853="+encodeURIComponent(chosenName);
+      var thisFormUrl = thisFormUrl.replace("*recip*","&entry.1836097853="+encodeURIComponent(chosenName));
     }
     window.location.href = thisFormUrl.replace("*kbNum*",kbNum);
 }
