@@ -74,7 +74,14 @@ function onScanSuccess(qrCodeMessage) {
     // }
     var kbId = qrCodeMessage.slice(-10);
     var kbNum = keyboardIds.indexOf(kbId) + 1;
-    window.location.href = formUrl.replace("*kbNum*",kbNum);
+    var chosenName = document.getElementById("deliv-opts").value
+    if (chosenName = "none") {
+      var thisFormUrl = formUrl
+    }
+    else {
+      var thisFormUrl = thisFormUrl + "&entry.1836097853="+encodeURIComponent(chosenName);
+    }
+    window.location.href = thisFormUrl.replace("*kbNum*",kbNum);
 }
 
 // https://github.com/mebjas/html5-qrcode#for-using-inline-qr-code-scanning-with-webcam-or-smartphone-camera
