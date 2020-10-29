@@ -5,11 +5,13 @@ sheetNumber: 7,
 returnAllResults: false,
 }
 function addOpt (opt, name) {
-  var x = document.createElement("OPTION");
-  x.setAttribute("value", "name");
-  var t = document.createTextNode("opt");
-  x.appendChild(t);
-  document.getElementById("deliv-opts").appendChild(x);
+  if (opt != "") {
+    var x = document.createElement("OPTION");
+    x.setAttribute("value", name);
+    var t = document.createTextNode(opt);
+    x.appendChild(t);
+    document.getElementById("deliv-opts").appendChild(x);
+  }
 }
 var gsheet = GSheetProcessor(
   options,
