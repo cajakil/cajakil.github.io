@@ -20,8 +20,23 @@
 
   }
   </style>
+  <script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("result").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYTMTLxJXlZkfnmiS-7oTwmO9g8jIuVJJbMDmPbIbgQlumeYVrfzEIJ2mk1fJo1a-E9XVTIiCs5yNt/pub?gid=1574311268&single=true&output=csv", true);
+  xhttp.send();
+}
+window.onload = loadXMLDoc()
+</script>
   <script src="./getDueDeliv.js" type="module">
   </script>
+
   </head>
   <body>
     <div class="wrapper">
@@ -33,6 +48,7 @@
   <option value="none">If delivery, choose name</option>
 
 </select>
+<p id="result"></p>
 <div id="qr-reader" style="width:280px;margin:auto;"></div>
 </div>
 <!-- <div id="qr-reader-results" style="width:360px"></div> -->
