@@ -11,7 +11,7 @@ function addOpt (opt, name) {
   x.appendChild(t);
   document.getElementById("deliv-opts").appendChild(x);
 }
-gsheet = GSheetProcessor(
+var gsheet = GSheetProcessor(
   options,
   results => {
     // do something with the results here
