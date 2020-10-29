@@ -82,7 +82,8 @@ function onScanSuccess(qrCodeMessage) {
       var recipBit = "&entry.1836097853="+encodeURIComponent(chosenName)
     }
     var thisFormUrl = formUrl.replace("*recip*",recipBit);
-    window.location.href = thisFormUrl.replace("*kbNum*",kbNum);
+    alert(thisFormUrl.replace("*kbNum*",kbNum))
+    // window.location.href = thisFormUrl.replace("*kbNum*",kbNum);
 }
 
 // https://github.com/mebjas/html5-qrcode#for-using-inline-qr-code-scanning-with-webcam-or-smartphone-camera
