@@ -76,11 +76,12 @@ function onScanSuccess(qrCodeMessage) {
     var kbNum = keyboardIds.indexOf(kbId) + 1;
     var chosenName = document.getElementById("deliv-opts").value
     if (chosenName = "none") {
-      var thisFormUrl = formUrl
+      var recipBit = ""
     }
     else {
-      var thisFormUrl = thisFormUrl.replace("*recip*","&entry.1836097853="+encodeURIComponent(chosenName));
+      var recipBit = "&entry.1836097853="+encodeURIComponent(chosenName)
     }
+    var thisFormUrl = thisFormUrl.replace("*recip*",recipBit);
     window.location.href = thisFormUrl.replace("*kbNum*",kbNum);
 }
 
