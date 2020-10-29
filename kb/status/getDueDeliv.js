@@ -8,7 +8,10 @@ gsheet = GSheetReader(
   options,
   results => {
     // do something with the results here
-    alert(results)
+    console.log(results)
+    results.forEach((result) => {
+      document.getElementById("app").innerHTML += `<p>${result["output"]}</p>`
+    });
   },
   error => {
     // OPTIONAL: handle errors here
