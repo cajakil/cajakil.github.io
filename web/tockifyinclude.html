@@ -1,8 +1,123 @@
 <html>
   <head>
     <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
+    <style>
+      .site-header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+      .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead, #colophon {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+      .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead, #colophon {
+	width: calc(calc(782px - 32px) + 256px);
+	max-width: calc(100% - 32px);
+}
+    
+    .site-header, .site-main, .site-footer {
+	padding-top: 32px;
+	padding-right: 0;
+	padding-bottom: 32px;
+	padding-left: 0;
+}
+    *, ::before, ::after {
+	box-sizing: inherit;
+}
+    .a8c-posts-list .a8c-posts-list-item__featured span, .comment-meta .comment-metadata, .footer-navigation .footer-menu, .main-navigation, .main-navigation a, .main-navigation a:link, .main-navigation a:visited, .post-navigation .meta-nav, .post-navigation a .post-title, .screen-reader-text:focus, .site-info, .site-title, .social-navigation a, .wp-block-code, .wp-block-code pre, .wp-block-pullquote, .wp-block-table.is-style-stripes tbody tr:nth-child(2n+1), body, body .widget_eu_cookie_law_widget #eu-cookie-law, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept, input[type="color"], input[type="color"]:focus, input[type="date"], input[type="date"]:focus, input[type="datetime"], input[type="datetime"]:focus, input[type="datetime-local"], input[type="datetime-local"]:focus, input[type="email"], input[type="email"]:focus, input[type="month"], input[type="month"]:focus, input[type="number"], input[type="number"]:focus, input[type="password"], input[type="password"]:focus, input[type="range"], input[type="range"]:focus, input[type="search"], input[type="search"]:focus, input[type="tel"], input[type="tel"]:focus, input[type="text"], input[type="text"]:focus, input[type="time"], input[type="time"]:focus, input[type="url"], input[type="url"]:focus, input[type="week"], input[type="week"]:focus, textarea, textarea:focus {
+	color: #00005b;
+}
+    body {
+	font-size: 1rem;
+	font-weight: 400;
+	color: #303030;
+	text-align: left;
+}
+    html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, form, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+	-moz-osx-font-smoothing: grayscale;
+}
+    root {
+    --font-headings: Nunito;
+    --font-base: Nunito;
+    --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+:root {
+    --coblocks-spacing--0: 0;
+    --coblocks-spacing--1: .5em;
+    --coblocks-spacing--2: 1em;
+    --coblocks-spacing--3: 1.5em;
+    --coblocks-spacing--4: 2em;
+    --coblocks-spacing--5: 2.5em;
+    --coblocks-spacing--6: 3em;
+    --coblocks-spacing--7: 3.5em;
+    --coblocks-spacing--8: 4em;
+    --coblocks-spacing--9: 4.5em;
+    --coblocks-spacing--10: 7em;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+html {
+    font-size: 20px;
+}
+html {
+    font-size: 16.66667px;
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-family: var(--font-base,Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",);
+    line-height: 1.6;
+}
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+html {
+    font-size: 20px;
+}
+html {
+    font-size: 16.66667px;
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-family: var(--font-base,Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",);
+    line-height: 1.6;
+}
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+    </style>
   </head>
   <body>
+    <header id="masthead" class="site-header responsive-max-width">
+	<div class="site-branding">
+
+								<p class="site-title"><a href="https://jackcampbell.uk/" rel="home">Jack Campbell</a></p>
+			
+				<p class="site-description">
+				piano, collaborative piano &amp; composition			</p>
+	</div><!-- .site-branding -->
+		<nav id="site-navigation" class="main-navigation" aria-label="Main Navigation">
+		<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">
+		<label for="toggle" id="toggle-menu" class="button">
+			Menu			<span class="hide-visually expanded-text">expanded</span>
+			<span class="hide-visually collapsed-text">collapsed</span>
+		</label>
+		<div class="menu-primary-container"><ul id="menu-primary" class="main-menu" aria-label="submenu"><li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-5 current_page_item menu-item-137"><a href="https://jackcampbell.uk/" aria-current="page">Home</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="https://jackcampbell.uk/about/">About me</a></li>
+<li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a href="https://jackcampbell.uk/blog/">Blog</a></li>
+<li id="menu-item-120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-120"><a href="https://jackcampbell.uk/videos/">Videos</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://jackcampbell.uk/contact/">Contact</a></li>
+</ul></div>	</nav><!-- #site-navigation -->
+</header>
+    
     <div data-tockify-component="calendar" data-tockify-calendar="jack.campbell"></div>
   </body>
 </html>
