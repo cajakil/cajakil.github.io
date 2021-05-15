@@ -11,19 +11,22 @@ function addOpt (opt, name) {
     var t = document.createTextNode(opt);
     x.appendChild(t);
     document.getElementById("deliv-opts").appendChild(x);
-    document.getElementById("deliv-opts").style.display = "block";
-    document.getElementById("deliv-loading").style.display = "none";
   }
+}
+function doneOpts() {
+  document.getElementById("deliv-opts").style.display = "block";
+  document.getElementById("deliv-loading").style.display = "none";
 }
 var gsheet = GSheetProcessor(
   options,
   results => {
     // do something with the results here
-    console.log(results)
+    //console.log(results)
     results.forEach((result) => {
       // document.getElementById("app").innerHTML += `<p>${result["output"]}</p>`
       addOpt(result["output"],result["name"])
     });
+    doneOpts()
   },
   error => {
     // OPTIONAL: handle errors here
