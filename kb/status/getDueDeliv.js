@@ -11,6 +11,8 @@ function addOpt (opt, name) {
     var t = document.createTextNode(opt);
     x.appendChild(t);
     document.getElementById("deliv-opts").appendChild(x);
+    document.getElementById("deliv-opts").style.display = "block";
+    document.getElementById("deliv-loading").style.display = "none";
   }
 }
 var gsheet = GSheetProcessor(

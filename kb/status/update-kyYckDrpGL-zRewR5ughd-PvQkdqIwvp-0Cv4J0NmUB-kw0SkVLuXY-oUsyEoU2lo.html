@@ -29,9 +29,10 @@
   <h1 class="title">Keyboard status: scan QR code</h1>
 <!-- <div class="info">Scan QR code to open status update form</div> -->
 <!-- <div style="height:20px"></div> -->
-<select id="deliv-opts">
+<select id="deliv-opts" style="display:none">
   <option value="none">If delivery, choose name</option>
 </select>
+<p id="deliv-loading">Loading deliveries; please wait ...</p>
 <script src="./getDueDeliv.js" type="module">
 </script>
 <p id="result"></p>
