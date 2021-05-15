@@ -19,10 +19,10 @@ function addOpt (opt, name) {
 }
 function doneOpts(optcount) {
   if (optcount === 0) {
-    document.getElementById("deliv-none").style.display = "block";
+    document.getElementById("deliv-none").style.display = "inline";
   }
   else {
-    document.getElementById("deliv-opts").style.display = "block";
+    document.getElementById("deliv-opts").style.display = "inline";
   }
   document.getElementById("deliv-loading").style.display = "none";
 }
