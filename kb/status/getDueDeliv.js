@@ -11,10 +11,19 @@ function addOpt (opt, name) {
     var t = document.createTextNode(opt);
     x.appendChild(t);
     document.getElementById("deliv-opts").appendChild(x);
+    return 1
+  }
+  else {
+    return 0
   }
 }
-function doneOpts() {
-  document.getElementById("deliv-opts").style.display = "block";
+function doneOpts(optcount) {
+  if (optcount === 0) {
+    document.getElementById("deliv-none").style.display = "block";
+  }
+  else {
+    document.getElementById("deliv-opts").style.display = "block";
+  }
   document.getElementById("deliv-loading").style.display = "none";
 }
 var gsheet = GSheetProcessor(
@@ -22,11 +31,13 @@ var gsheet = GSheetProcessor(
   results => {
     // do something with the results here
     //console.log(results)
+    var optcount = 0
     results.forEach((result) => {
       // document.getElementById("app").innerHTML += `<p>${result["output"]}</p>`
-      addOpt(result["output"],result["name"])
+      var success = addOpt(result["output"],result["name"])
+      optcount + success
     });
-    doneOpts()
+    doneOpts(optcount)
   },
   error => {
     // OPTIONAL: handle errors here
