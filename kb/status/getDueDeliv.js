@@ -35,7 +35,7 @@ var gsheet = GSheetProcessor(
     results.forEach((result) => {
       // document.getElementById("app").innerHTML += `<p>${result["output"]}</p>`
       var success = addOpt(result["output"],result["name"])
-      optcount + success
+      optcount += success
     });
     doneOpts(optcount)
   },
