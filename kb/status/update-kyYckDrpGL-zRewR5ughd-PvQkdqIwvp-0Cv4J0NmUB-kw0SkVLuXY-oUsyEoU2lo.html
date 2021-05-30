@@ -93,7 +93,7 @@ function kbNumValid(num) {
   return (0 < num && num <= 20 && Number.isInteger(num))
 }
 
-function deliveryToForm(kbNum) {
+function deliveryToForm(kbNum=0) {
   var thisFormUrl = getRecip()
   if(kbNumValid(kbNum)) {
     thisFormUrl = thisFormUrl.replace("*kbNum*",kbNum) & jumpTo.STATUS
