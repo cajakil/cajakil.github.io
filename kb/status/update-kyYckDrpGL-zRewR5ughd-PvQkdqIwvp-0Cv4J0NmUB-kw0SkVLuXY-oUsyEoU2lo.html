@@ -128,7 +128,7 @@ function onScanSuccess(qrCodeMessage) {
 }
 
 const button = document.getElementById('no-qr')
-button.addEventListener('click',deliveryToForm(0))
+button.addEventListener('click',deliveryToForm)
 
 // https://github.com/mebjas/html5-qrcode#for-using-inline-qr-code-scanning-with-webcam-or-smartphone-camera
 const html5QrCode = new Html5Qrcode("qr-reader");
