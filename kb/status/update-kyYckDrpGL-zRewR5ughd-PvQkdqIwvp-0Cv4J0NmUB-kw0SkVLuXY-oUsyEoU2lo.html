@@ -38,7 +38,7 @@
 <p id="deliv-none" style="display:none">No deliveries found</p>
 <script src="./getDueDeliv.js" type="module">
 </script>
-<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform">Update status without QR code</a></p>
+<p><a href="" onclick="deliveryToForm(0)">Update status without QR code</a></p>
 <p id="result"></p>
 <div id="qr-reader" style="width:280px;margin:auto;"></div>
 </div>
@@ -68,6 +68,7 @@ var keyboardIds = [
 "uvIiE5RKtt",
 "aodYpImW6J",
 "Tlo1Y6HkGN"]
+var formUrlBasic = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform"
 var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?entry.471244016=*kbNum**recip*#i5"
 var jumpTo = {
   STATUS : "#i5",
