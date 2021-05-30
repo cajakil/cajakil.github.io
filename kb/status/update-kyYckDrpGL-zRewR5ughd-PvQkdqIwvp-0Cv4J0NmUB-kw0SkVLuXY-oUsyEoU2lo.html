@@ -68,10 +68,14 @@ var keyboardIds = [
 "uvIiE5RKtt",
 "aodYpImW6J",
 "Tlo1Y6HkGN"]
-formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?entry.471244016=*kbNum**recip*#i5"
+var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?entry.471244016=*kbNum**recip*#i5"
+var jumpTo = {
+  STATUS : "#i5",
+  NUMBER : "#i1"
+}
 
 function getRecip() {
-  // returns the "recipBit" URL from the deliveries box
+  // returns the URL with "recipBit" filled out or removed depending on deliveries box
   var chosenName = document.getElementById("deliv-opts").value
   if (chosenName == "none") {
     var recipBit = ""
@@ -79,11 +83,28 @@ function getRecip() {
   else {
     var recipBit = "&entry.425118090=Delivered&entry.1836097853="+encodeURIComponent(chosenName)
   }
-  return recipBit
+  var thisFormUrl = formUrl.replace("*recip*",recipBit);
+  return thisFormUrl
 }
 
 function kbNumValid(num) {
   return (0 < num && num <== 20 && Number.isInteger(num))
+}
+
+function deliveryToForm(kbNum) {
+  var thisFormUrl = getRecip()
+  if(kbNumValid(kbNum)) {
+    thisFormUrl = thisFormUrl.replace("*kbNum*",kbNum) & jumpTo.STATUS
+  }
+  else {
+    thisFormUrl = thisFormUrl.replace("*kbNum*",'') & jumpTo.NUMBER
+  }
+  if (debug == true) {
+    alert(thisFormUrl)
+  }
+  else {
+    window.location.href = thisFormUrl
+  }
 }
 
 function onScanSuccess(qrCodeMessage) {
@@ -95,19 +116,12 @@ function onScanSuccess(qrCodeMessage) {
     // }
     var kbId = qrCodeMessage.slice(-10);
     var kbNum = keyboardIds.indexOf(kbId) + 1;
-    if (!kbNumValid(kbNum)) {
-      alert(`Error scanning keyboard QR code, please try again! Technical info: kbId = ${kbID}; kbNum = ${kbNum}`)
-      return null
-    }
-
-    var recipBit = getRecip()
-
-    var thisFormUrl = formUrl.replace("*recip*",recipBit);
-    if (debug == true) {
-      alert(thisFormUrl.replace("*kbNum*",kbNum))
+    if (kbNumValid(kbNum)) {
+      deliveryToForm(kbNum)
     }
     else {
-      window.location.href = thisFormUrl.replace("*kbNum*",kbNum);
+      alert(`Error scanning keyboard QR code, please try again! Technical info: kbId = ${kbID}; kbNum = ${kbNum}`)
+      return null
     }
 }
 
