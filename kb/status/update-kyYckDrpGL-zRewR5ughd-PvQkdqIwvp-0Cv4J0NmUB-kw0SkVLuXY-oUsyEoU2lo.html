@@ -100,14 +100,14 @@ function kbNumValid(num) {
 
 function deliveryToForm(kbNum=0) {
   var thisFormUrl = getRecip()
-  logger.log(thisFormUrl)
+  console.log(thisFormUrl)
   if(kbNumValid(kbNum)) {
     thisFormUrl = thisFormUrl.replace("*kbNum*",kbNum) & jumpTo.STATUS
-    logger.log(thisFormUrl)
+    console.log(thisFormUrl)
   }
   else {
     thisFormUrl = thisFormUrl.replace("*kbNum*",'') & jumpTo.NUMBER
-    logger.log(thisFormUrl)
+    console.log(thisFormUrl)
   }
   if (debug == true) {
     alert(thisFormUrl)
