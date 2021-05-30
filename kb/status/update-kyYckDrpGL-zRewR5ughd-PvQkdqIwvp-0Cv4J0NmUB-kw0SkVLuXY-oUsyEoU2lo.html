@@ -6,7 +6,6 @@
 <style>
   .wrapper {
     padding : 5px;
-
     font-family: sans-serif;
     text-align: center;
   }
@@ -20,7 +19,9 @@
     font-size: 12pt;
     font-family: "Arial, sans-serif"
   }
-
+  .button {
+    margin-top : 0.6em
+  }
   </style>
   <script>var debug = false
   </script>
@@ -38,7 +39,7 @@
 <p id="deliv-none" style="display:none">No deliveries found</p>
 <script src="./getDueDeliv.js" type="module">
 </script>
-<p><a href="" onclick="deliveryToForm(0)">Update status without QR code</a></p>
+<p class='button'><button href="" onclick="deliveryToForm(0)">Update status without QR code</button></p>
 <p id="result"></p>
 <div id="qr-reader" style="width:280px;margin:auto;"></div>
 </div>
