@@ -76,11 +76,12 @@ var keyboardIds = [
 "aodYpImW6J",
 "Tlo1Y6HkGN"]
 var formUrlBasic = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform"
-var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?entry.471244016=*kbNum**recip*#i5"
+var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?*kbNum**recip*"
 var jumpTo = {
   STATUS : "#i5",
   NUMBER : "#i1"
 }
+const kbNumBox = "entry.471244016="
 
 function getRecip() {
   // returns the URL with "recipBit" filled out or removed depending on deliveries box
@@ -103,7 +104,7 @@ function deliveryToForm(kbNum=0) {
   var thisFormUrl = getRecip()
   console.log(thisFormUrl)
   if(kbNumValid(kbNum)) {
-    thisFormUrl = thisFormUrl.replace("*kbNum*",kbNum) + jumpTo.STATUS
+    thisFormUrl = thisFormUrl.replace("*kbNum*",kbNumBox+kbNum) + jumpTo.STATUS
     console.log(thisFormUrl)
   }
   else {
