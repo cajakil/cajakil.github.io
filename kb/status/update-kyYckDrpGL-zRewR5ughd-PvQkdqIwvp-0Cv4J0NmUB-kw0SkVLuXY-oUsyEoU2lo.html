@@ -28,7 +28,7 @@
     border: 2px solid red;
   }
   </style>
-  <script>var debug = false
+  <script>var debug = true
   </script>
   </head>
   <body>
@@ -100,11 +100,14 @@ function kbNumValid(num) {
 
 function deliveryToForm(kbNum=0) {
   var thisFormUrl = getRecip()
+  logger.log(thisFormUrl)
   if(kbNumValid(kbNum)) {
     thisFormUrl = thisFormUrl.replace("*kbNum*",kbNum) & jumpTo.STATUS
+    logger.log(thisFormUrl)
   }
   else {
     thisFormUrl = thisFormUrl.replace("*kbNum*",'') & jumpTo.NUMBER
+    logger.log(thisFormUrl)
   }
   if (debug == true) {
     alert(thisFormUrl)
