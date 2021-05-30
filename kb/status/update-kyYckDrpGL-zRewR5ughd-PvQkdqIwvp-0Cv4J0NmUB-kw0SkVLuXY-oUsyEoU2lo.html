@@ -70,6 +70,22 @@ var keyboardIds = [
 "Tlo1Y6HkGN"]
 formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7903_DmMBcSoZRzVoVckXfYcvlOXw1hs-iE5qM0To9UbyjQ/viewform?entry.471244016=*kbNum**recip*#i5"
 
+function getRecip() {
+  // returns the "recipBit" URL from the deliveries box
+  var chosenName = document.getElementById("deliv-opts").value
+  if (chosenName == "none") {
+    var recipBit = ""
+  }
+  else {
+    var recipBit = "&entry.425118090=Delivered&entry.1836097853="+encodeURIComponent(chosenName)
+  }
+  return recipBit
+}
+
+function kbNumValid(num) {
+  return (0 < num && num <== 20 && Number.isInteger(num))
+}
+
 function onScanSuccess(qrCodeMessage) {
     // if (qrCodeMessage !== lastResult) {
     //     ++countResults;
@@ -79,13 +95,13 @@ function onScanSuccess(qrCodeMessage) {
     // }
     var kbId = qrCodeMessage.slice(-10);
     var kbNum = keyboardIds.indexOf(kbId) + 1;
-    var chosenName = document.getElementById("deliv-opts").value
-    if (chosenName == "none") {
-      var recipBit = ""
+    if (!kbNumValid(kbNum)) {
+      alert(`Error scanning keyboard QR code, please try again! Technical info: kbId = ${kbID}; kbNum = ${kbNum}`)
+      return null
     }
-    else {
-      var recipBit = "&entry.425118090=Delivered&entry.1836097853="+encodeURIComponent(chosenName)
-    }
+
+    var recipBit = getRecip()
+
     var thisFormUrl = formUrl.replace("*recip*",recipBit);
     if (debug == true) {
       alert(thisFormUrl.replace("*kbNum*",kbNum))
