@@ -39,7 +39,7 @@
 <p id="deliv-none" style="display:none">No deliveries found</p>
 <script src="./getDueDeliv.js" type="module">
 </script>
-<p class='button'><button href="" onclick="deliveryToForm(0)">Update status without QR code</button></p>
+<p class='button'><button id="no-qr">Update status without QR code</button></p>
 <p id="result"></p>
 <div id="qr-reader" style="width:280px;margin:auto;"></div>
 </div>
@@ -126,6 +126,9 @@ function onScanSuccess(qrCodeMessage) {
       return null
     }
 }
+
+const button = document.getElementById('no-qr')
+button.addEventListener('click',deliveryToForm(0))
 
 // https://github.com/mebjas/html5-qrcode#for-using-inline-qr-code-scanning-with-webcam-or-smartphone-camera
 const html5QrCode = new Html5Qrcode("qr-reader");
