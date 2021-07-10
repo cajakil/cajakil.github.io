@@ -42,5 +42,5 @@ var gsheet = GSheetProcessor(
   error => {
     // OPTIONAL: handle errors here
     console.log(error)
-    document.getElementById("deliv-loading").innerHTML = "Deliveries couldn't be retreived; if you need to deliver a keyboard reload the page, or scan the QR code then enter the booking ID"
+    document.getElementById("deliv-loading").innerHTML = "❌ Deliveries couldn't be retreived; if you need to deliver a keyboard reload the page, or scan the QR code then enter the booking ID"
   });
