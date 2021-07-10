@@ -30,11 +30,11 @@ var gsheet = GSheetProcessor(
   options,
   results => {
     // do something with the results here
-    //console.log(results)
+    console.log(results)
     var optcount = 0
     results.forEach((result) => {
       // document.getElementById("app").innerHTML += `<p>${result["output"]}</p>`
-      var success = addOpt(result["output"],result["name"])
+      var success = addOpt(result["output"],result["BookingID"])
       optcount += success
     });
     doneOpts(optcount)
